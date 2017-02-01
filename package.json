@@ -1,0 +1,19 @@
+{
+  "name": "dev.photon",
+  "version": "1.0.0",
+  "description": "Photon-art.com development site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brentpayton/photon_dev.git"
+  },
+  "author": "Brent Payton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brentpayton/photon_dev/issues"
+  },
+  "homepage": "https://github.com/brentpayton/photon_dev#readme"
+}
