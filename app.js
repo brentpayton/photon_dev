@@ -20,12 +20,24 @@ app.set('view engine', 'handlebars');
 //-----------------------------------------------------------------------------
 // Routes
 //-----------------------------------------------------------------------------
-app.get('/home', function (req, res) {
+app.get('/', function (req, res) {
     res.render('home', {});
 });
 
-app.get('/gallery', function (req, res) {
-    res.render('gallery', {});
+app.get('/about', function (req, res) {
+    res.render('about', {});
+});
+
+app.get('/nature', function (req, res) {
+    res.render('nature', {});
+});
+
+app.get('/travel', function (req, res) {
+    res.render('travel', {});
+});
+
+app.get('/other', function (req, res) {
+    res.render('other', {});
 });
 
 //-----------------------------------------------------------------------------
