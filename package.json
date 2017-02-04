@@ -19,6 +19,13 @@
   "dependencies": {
     "express": "^4.14.1",
     "express-handlebars": "^3.0.0",
+    "grunt": "^1.0.1",
+    "grunt-bootlint": "^0.10.1",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-html": "^8.3.1",
+    "grunt-link-checker": "^0.2.0",
+    "grunt-run": "^0.6.0",
     "lg-fullscreen": "^1.0.1",
     "lg-hash": "^1.0.1",
     "lg-thumbnail": "^1.0.2",

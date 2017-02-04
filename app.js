@@ -1,8 +1,15 @@
+process.chdir('/usr/share/nginx/html/dev.photon/');
+var fs = require('fs');
+//var http = require('http');
+var https = require('https');
+var privatekey = fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/privkey.pem');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/fullchain.pem');
+var credentials = {key: privatekey, cert: certificate};
 var express = require('express');
 var app = express();
-var fs = require('fs');
-// app.enable('view cache'); // To enable handlebars view caching
-//process.env.NODE_ENV = "production"; // Enables view caching
+
+app.enable('view cache'); // To enable handlebars view caching
+process.env.NODE_ENV = "production"; // Enables view caching
 // process.env.NODE_ENV = "dev"; // Disables view caching
 //-----------------------------------------------------------------------------
 // Handlebars
@@ -48,4 +55,10 @@ app.use(express.static('public'));
 //-----------------------------------------------------------------------------
 // Listen
 //-----------------------------------------------------------------------------
-app.listen(3000);
+//app.listen(3000);
+//var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+//httpServer.listen(3000);
+httpsServer.listen(3001);
+
+console.log('dev.photon-art.com in', app.get('env'), 'mode');

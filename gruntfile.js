@@ -23,7 +23,7 @@ grunt.initConfig({
 		blc: {
 			cmd: './node_modules/.bin/blc',
 			args: [
-				'https://dev.fzachoval.com',
+				'https://dev.photon-art.com',
 				'--filter-level 3 ',
 				'--ordered ',
 				'--recursive ',
@@ -48,14 +48,14 @@ grunt.initConfig({
 		files: ['temp/**/*.html']
 	},
 	csslint: {
-		src: ['new_main.css']
+		src: ['temp/css/*.css']
 	},
 	linkChecker: {
 		options: {
 			maxConcurrency: 20
 		},
 	  default: {
-	    site: 'dev.photon-.com',
+	    site: 'dev.photon-art.com',
 	    options: {
 	      initialPort: 443
 	    }
