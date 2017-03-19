@@ -1,16 +1,39 @@
+// jshint asi:true, esversion:6
 process.chdir('/usr/share/nginx/html/dev.photon/');
+const port = 3001;
 var fs = require('fs');
 //var http = require('http');
-var https = require('https');
+var spdy = require('spdy');
+////var https = require('https');
 var privatekey = fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/privkey.pem');
 var certificate = fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/fullchain.pem');
 var credentials = {key: privatekey, cert: certificate};
 var express = require('express');
 var app = express();
 
+// ----------------------------------------------------------------------------
+// SPDY
+// ----------------------------------------------------------------------------
+var options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/privkey.pem'),
+    cert:  fs.readFileSync('/etc/letsencrypt/live/www1.brentpayton.com/fullchain.pem')
+};
+
+spdy
+  .createServer(options, app)
+  .listen(port, (error) => {
+    if (error) {
+      console.error(error);
+      return process.exit(1);
+    } else {
+      console.log('Listening on port: ' + port + '.');
+    }
+  });
+
 app.enable('view cache'); // To enable handlebars view caching
-process.env.NODE_ENV = "production"; // Enables view caching
+// process.env.NODE_ENV = "production"; // Enables view caching
 // process.env.NODE_ENV = "dev"; // Disables view caching
+
 //-----------------------------------------------------------------------------
 // Handlebars
 // https://github.com/ericf/express-handlebars
@@ -50,15 +73,19 @@ app.get('/other', function (req, res) {
 //-----------------------------------------------------------------------------
 // Static Files
 //-----------------------------------------------------------------------------
-app.use(express.static('public'));
+var oneMonth = 86400000 * 30;// 86400000 milliseconds is one day;
+
+// app.use(express.static('public'));
+app.use(express.static('public', { maxAge: oneMonth }));
 
 //-----------------------------------------------------------------------------
 // Listen
 //-----------------------------------------------------------------------------
 //app.listen(3000);
 //var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+////var httpsServer = https.createServer(credentials, app);
 //httpServer.listen(3000);
-httpsServer.listen(3001);
+////httpsServer.listen(3001);
+////console.log('dev.photon-art.com in', app.get('env'), 'mode');
 
 console.log('dev.photon-art.com in', app.get('env'), 'mode');
