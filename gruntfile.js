@@ -38,6 +38,9 @@ grunt.initConfig({
 			src: "temp/*.html"
 		},
 		all: {
+			options: {
+				force: true
+			},
 			src: [ 'temp/**/*.html' ]
 		},
 	},
@@ -65,7 +68,7 @@ grunt.initConfig({
 
 	grunt.registerTask('test', function () {
 	    var tasks = [
-		        'run:wget',
+		    'run:wget',
 				'htmllint:all',
 				'bootlint',
 				'csslint'

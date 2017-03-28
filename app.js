@@ -74,18 +74,9 @@ app.get('/other', function (req, res) {
 // Static Files
 //-----------------------------------------------------------------------------
 var oneMonth = 86400000 * 30;// 86400000 milliseconds is one day;
-
-// app.use(express.static('public'));
 app.use(express.static('public', { maxAge: oneMonth }));
 
 //-----------------------------------------------------------------------------
 // Listen
 //-----------------------------------------------------------------------------
-//app.listen(3000);
-//var httpServer = http.createServer(app);
-////var httpsServer = https.createServer(credentials, app);
-//httpServer.listen(3000);
-////httpsServer.listen(3001);
-////console.log('dev.photon-art.com in', app.get('env'), 'mode');
-
 console.log('dev.photon-art.com in', app.get('env'), 'mode');

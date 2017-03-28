@@ -1,44 +1,34 @@
 <div id="footer">
   <div class="container text-center">
-    <hr />
     <p>Copyright 2017 Brent Payton</p>
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-{{!-- <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script> --}}
-
-{{!-- LightGallery Mixed CDN and local--}}
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.8/js/lightgallery.min.js"></script>
-<script src="js/vendor/lg-thumbnail.min.js"></script>
-<script src="js/vendor/lg-fullscreen.min.js"></script>
-<script src="js/vendor/lg-zoom.min.js"></script>
-<script src="js/vendor/lg-hash.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/jquery/3.2.0/jquery.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 
 {{!-- Use mousewheel to page through photos. --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" async></script>
 
-{{!-- LightGallery 100% via CDN --}}
-<script src="https://cdn.jsdelivr.net/lg-fullscreen/1.0.1/lg-fullscreen.min.js" integrity="sha256-lcfZFYCvt4cOfmBDhD3LtioPmICRvQ9xofvDpt5LmcU=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/lg-hash/1.0.1/lg-hash.min.js" integrity="sha256-dtPzicIrNQpKgVY0PcVAVA4tAa7fPNs7RI7X2DpERbs=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/lg-thumbnail/1.0.3/lg-thumbnail.min.js" integrity="sha256-K7qNsAL87cdlcDefkAC2AhhSjbZru8UtUmyQdQaCqc8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/lg-zoom/1.0.4/lg-zoom.min.js" integrity="sha256-oILQuzelWjUxHNYC31Xtsfh/rCMyzJyoDDbHnIpTieI=" crossorigin="anonymous"></script>
+{{!-- LightGallery --}}
 <script src="https://cdn.jsdelivr.net/lightgallery/1.3.9/js/lightgallery.min.js" integrity="sha256-pSSvK0OcLS3lFi6N0wvOgjHfa0Lqfj+tZ6Tfn1PqqXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/lg-fullscreen/1.0.1/lg-fullscreen.min.js" integrity="sha256-lcfZFYCvt4cOfmBDhD3LtioPmICRvQ9xofvDpt5LmcU=" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/lg-hash/1.0.1/lg-hash.min.js" integrity="sha256-dtPzicIrNQpKgVY0PcVAVA4tAa7fPNs7RI7X2DpERbs=" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/lg-thumbnail/1.0.3/lg-thumbnail.min.js" integrity="sha256-K7qNsAL87cdlcDefkAC2AhhSjbZru8UtUmyQdQaCqc8=" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/lg-zoom/1.0.4/lg-zoom.min.js" integrity="sha256-oILQuzelWjUxHNYC31Xtsfh/rCMyzJyoDDbHnIpTieI=" crossorigin="anonymous" async></script>
 
 {{!-- Bootstrap --}}
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 {{!-- Local JS --}}
-<script src="js/main.js"></script>
+<script src="js/main.js" async></script>
 
 {{!-- Google Analytics --}}
 <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-75040697-2','auto');ga('send','pageview');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75040697-2', 'auto');
+  ga('send', 'pageview');
 </script>

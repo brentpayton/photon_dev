@@ -4,6 +4,12 @@ $(document).ready(function() {
       thumbnail : true,
       download : false
   });
+
+  $('#srcset').lightGallery({
+    thumbnail: false,
+    download: false
+  });
+
   $('.light-link').mouseenter(function() {
     $(this).addClass('fadeImg');
   });
