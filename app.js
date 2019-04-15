@@ -1,5 +1,6 @@
 // jshint asi:true, esversion:6
 process.chdir('/usr/share/nginx/html/dev.photon/');
+// Dev runs on 3001, production on 3002
 const port = 3001;
 var fs = require('fs');
 //var http = require('http');
@@ -75,6 +76,13 @@ app.get('/other', function (req, res) {
 //-----------------------------------------------------------------------------
 var oneMonth = 86400000 * 30;// 86400000 milliseconds is one day;
 app.use(express.static('public', { maxAge: oneMonth }));
+
+//-----------------------------------------------------------------------------
+// Custom 404 Page
+//-----------------------------------------------------------------------------
+app.get('*', function (req, res) {
+  res.render('404', {});
+});
 
 //-----------------------------------------------------------------------------
 // Listen
